@@ -1,0 +1,27 @@
+.notations {
+  width: 248px;
+  background-color: #181818;
+  margin-left: 32px;
+  color: #f5f8f3;
+  padding: 12px;
+  height: calc(100vh - 64px);
+  border-radius: 14px;
+  font-family: "Gideon Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.notations .playerOne {
+  height: 50%;
+  width: 100%;
+  border-bottom: 1px solid #f5f8f3;
+}
+.notations .playerTwo {
+  height: 50%;
+  width: 100%;
+  border-top: 1px solid #f5f8f3;
+  padding-top: 8px;
+}

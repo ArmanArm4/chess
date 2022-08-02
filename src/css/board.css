@@ -1,0 +1,27 @@
+.board {
+  aspect-ratio: 1/1;
+  height: calc(100vh - 240px);
+  background-color: #f5f8f3;
+  border-radius: 29px;
+  padding: 6.48464%;
+  position: relative;
+  background-image: url("../images/board.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.board .pos {
+  color: #00827c;
+  position: absolute;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.a {
+  left: 0;
+  top: calc((100vh - 240px) * 0.055);
+  aspect-ratio: 1/1;
+  width: calc((100% - 5.5vh + 19.2px) / 8);
+  background-color: rgba(21, 75, 123, 0.452);
+}
