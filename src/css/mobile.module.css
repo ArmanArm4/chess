@@ -1,0 +1,47 @@
+.nav {
+  display: none;
+}
+@media only screen and (max-width: 835px) {
+  .nav {
+    display: block;
+    width: 100%;
+    height: 56px;
+    background-color: #00827c;
+    color: #f5f8f3;
+    font-family: "Gideon Roman";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0px 16px;
+    overflow: hidden;
+  }
+
+  .nav ul {
+    transform: translateY(0px);
+    display: flex;
+    gap: 32px;
+    padding: 0;
+  }
+  .nav a {
+    color: inherit;
+  }
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  .logo {
+    background-image: url("../images/logo.png");
+    width: 146px;
+    height: 48px;
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .nav li {
+    font-size: 14px;
+    transform: translateY(3px);
+  }
+  .nav a {
+    font-size: 14px;
+    transform: translateY(3px);
+  }
+}

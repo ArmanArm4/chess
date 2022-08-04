@@ -18,10 +18,44 @@
   height: 50%;
   width: 100%;
   border-bottom: 1px solid #f5f8f3;
+  overflow: auto;
 }
 .notations .playerTwo {
   height: 50%;
   width: 100%;
   border-top: 1px solid #f5f8f3;
   padding-top: 8px;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 1400px) {
+  .notations {
+    width: 200px;
+    height: calc(100vh - 36px);
+    border-radius: 12px;
+
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .notations .playerOne {
+    height: 50%;
+    width: 100%;
+    border-bottom: 1px solid #f5f8f3;
+  }
+  .notations .playerTwo {
+    height: 50%;
+    width: 100%;
+    border-top: 1px solid #f5f8f3;
+    padding-top: 8px;
+  }
+}
+@media only screen and (max-width: 835px) {
+  .notations {
+    width: calc(100% - 32px);
+    background-color: #181818;
+    margin: 0px 16px;
+    margin-bottom: 16px;
+  }
 }

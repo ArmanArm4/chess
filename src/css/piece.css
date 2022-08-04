@@ -1,0 +1,47 @@
+.piece {
+  aspect-ratio: 1/1;
+  width: calc(100% / 8);
+  position: absolute;
+  pointer-events: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pawnwhite {
+  background-image: url("../images/pawn_white.png");
+}
+.rookwhite {
+  background-image: url("../images/rook_white.png");
+}
+.bishopwhite {
+  background-image: url("../images/bishop_white.png");
+}
+.knightwhite {
+  background-image: url("../images/knight_white.png");
+}
+.kingwhite {
+  background-image: url("../images/king_white.png");
+}
+.queenwhite {
+  background-image: url("../images/queen_white.png");
+}
+
+.pawnblack {
+  background-image: url("../images/pawn_black.png");
+}
+.rookblack {
+  background-image: url("../images/rook_black.png");
+}
+.bishopblack {
+  background-image: url("../images/bishop_black.png");
+}
+.knightblack {
+  background-image: url("../images/knight_black.png");
+}
+.kingblack {
+  background-image: url("../images/king_black.png");
+}
+.queenblack {
+  background-image: url("../images/queen_black.png");
+}

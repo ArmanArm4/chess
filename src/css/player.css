@@ -53,3 +53,46 @@
   align-items: center;
   border-radius: 5px;
 }
+@media only screen and (max-height: 731px) {
+  .player {
+    border-radius: 8px;
+    padding: 0px 12px;
+    height: 64px;
+  }
+  .player {
+    margin-bottom: 16px;
+  }
+  .player:nth-child(1) {
+    margin-top: 16px;
+  }
+  .player .playerTime {
+    font-size: 32px;
+  }
+
+  .player .profile_image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .player .points {
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 835px) {
+  .player {
+    background-color: #181818;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    padding: 0px 16px;
+    margin-inline: 16px;
+    height: 76px;
+    color: #f5f8f3;
+    max-height: auto;
+  }
+}
