@@ -2,7 +2,6 @@ import React from "react";
 import "../css/piece.css";
 
 function Piece({ Positions, PieceData }) {
-  // console.log(PieceData);
   return (
     <>
       {!PieceData.eaten && (

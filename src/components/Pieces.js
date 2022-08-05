@@ -6,7 +6,6 @@ import Piece from "./Piece.js";
 function Pieces() {
   const { piecesData, Positions } = useContext(ChessContext);
 
-  // console.log(piecePosition);
   return (
     <>
       {piecesData.map((data, i) => {

@@ -30,7 +30,7 @@ function Squares() {
             <Square
               key={i + l}
               classname={i % 2 == 0 ? "odd" : "even"}
-              SquareId={`${numberToLetter(l)}_${9 - i}`}
+              SquareId={Number(`${l}${9 - i}`)}
             ></Square>
           );
         });

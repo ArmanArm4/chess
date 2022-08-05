@@ -1,28 +1,53 @@
+import pawnMove from "./pawnMove.js";
+
 function Moves(
   thePieceOnActiveSquare,
   thePieceOnSelectedSquare,
   piecesData,
-  SquareId
+  SquareId,
+  turnColor,
+  setTurnColor
 ) {
-  console.log(piecesData[thePieceOnActiveSquare].pos, SquareId);
-  const moveThePiece = () => {
-    piecesData[thePieceOnActiveSquare].pos = SquareId;
-  };
   const deleteThePiece = () => {
-    piecesData[thePieceOnSelectedSquare].eaten = true;
-    piecesData[thePieceOnSelectedSquare].pos = "dead";
+    thePieceOnSelectedSquare.eaten = true;
+    thePieceOnSelectedSquare.pos = "dead";
   };
-  if (thePieceOnSelectedSquare === undefined) {
-    moveThePiece();
+  const ChangeTurnColor = () => {
+    if (turnColor == "white") {
+      setTurnColor("black");
+    }
+    if (turnColor == "black") {
+      setTurnColor("white");
+    }
+  };
+  const props = {
+    thePieceOnActiveSquare,
+    thePieceOnSelectedSquare,
+    piecesData,
+    SquareId,
+    ChangeTurnColor,
+    deleteThePiece,
+  };
+  if (thePieceOnActiveSquare.type === "pawn") {
+    pawnMove(props);
+
     return;
   }
 
-  let selectedPieceColor = piecesData[thePieceOnSelectedSquare].color;
-  let activePieceColor = piecesData[thePieceOnActiveSquare].color;
-  if (selectedPieceColor != activePieceColor) {
-    deleteThePiece();
-    moveThePiece();
-  }
+  // thePieceOnActiveSquare.pos = SquareId;
+
+  // ChangeTurnColor();
+
+  // if (thePieceOnSelectedSquare === undefined) {
+  //   moveThePiece();
+
+  //   return;
+  // }
+
+  // if (thePieceOnSelectedSquare.color != thePieceOnActiveSquare.color) {
+  //   moveThePiece();
+  //   deleteThePiece();
+  // }
 }
 
 export default Moves;

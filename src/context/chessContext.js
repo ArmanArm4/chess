@@ -7,10 +7,18 @@ const ChessContext = createContext();
 
 export const ChessProvider = ({ children }) => {
   const [activeSquare, setActiveSquare] = useState(null);
+  const [turnColor, setTurnColor] = useState("white");
 
   return (
     <ChessContext.Provider
-      value={{ setActiveSquare, activeSquare, Positions, piecesData }}
+      value={{
+        setActiveSquare,
+        activeSquare,
+        Positions,
+        piecesData,
+        turnColor,
+        setTurnColor,
+      }}
     >
       {children}
     </ChessContext.Provider>
