@@ -1,12 +1,12 @@
 import piecesData from "../context/piecesData";
 
 function isoccupied(x, y) {
-  let checkThitSquare = `${x}${y}`;
+  let checkThisSquare = `${x}${y}`;
   let Isoccupied = false;
 
   piecesData.forEach((pieceData) => {
-    if (pieceData.pos == checkThitSquare) {
-      Isoccupied = true;
+    if (pieceData.pos == checkThisSquare) {
+      Isoccupied = pieceData.color;
     }
   });
 

@@ -249,7 +249,7 @@ const piecesData = [
   },
   {
     name: "black_queen",
-    pos: 43,
+    pos: 48,
     type: "queen",
     eaten: false,
     color: "black",
