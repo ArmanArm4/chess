@@ -11,6 +11,7 @@ function Square({ classname, SquareId }) {
     Positions,
     turnColor,
     setTurnColor,
+    setIsMate,
   } = useContext(ChessContext);
 
   const activeSquareHandler = () => {
@@ -62,7 +63,8 @@ function Square({ classname, SquareId }) {
         piecesData,
         SquareId,
         turnColor,
-        setTurnColor
+        setTurnColor,
+        setIsMate
       );
       setActiveSquare(false);
     }

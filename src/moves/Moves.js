@@ -4,7 +4,8 @@ import knightPosibleMove from "./posibleMoves/knightPosibleMove.js";
 import rookPosibleMove from "./posibleMoves/rookPosibleMove.js";
 import bishopPosibleMove from "./posibleMoves/bishopPosibleMove.js";
 import queenPosibleMove from "./posibleMoves/queenPosibleMove.js";
-import removesChecks from "./removesChecks";
+import removeChecks from "./removeChecks";
+import checkingForMate from "./checkingForMate.js";
 
 import makeAMove from "./makeAMove.js";
 
@@ -14,7 +15,8 @@ function Moves(
   piecesData,
   SquareId,
   turnColor,
-  setTurnColor
+  setTurnColor,
+  setIsMate
 ) {
   const deleteThePiece = () => {
     thePieceOnSelectedSquare.eaten = true;
@@ -37,7 +39,9 @@ function Moves(
     pieceColor: thePieceOnActiveSquare.color,
     thePieceOnActiveSquare,
     thePieceOnSelectedSquare,
+    piecesData,
   };
+
   let posibleMoves = [];
   if (thePieceOnActiveSquare.type === "pawn") {
     posibleMoves = pawnposibleMove(props);
@@ -57,9 +61,14 @@ function Moves(
   if (thePieceOnActiveSquare.type === "king") {
     posibleMoves = kingPosibleMove(props);
   }
-  // console.log(posibleMoves);
-  removesChecks({ ...props, posibleMoves });
-  makeAMove({
+
+  removeChecks({
+    thePieceOnActiveSquare,
+    pieceColor: thePieceOnActiveSquare.color,
+    posibleMoves,
+    piecesData,
+  });
+  const moveProps = {
     SquareId,
     thePieceOnActiveSquare,
     posibleMoves,
@@ -67,7 +76,12 @@ function Moves(
     deleteThePiece,
     pieceColor: thePieceOnActiveSquare.color,
     thePieceOnSelectedSquare,
-  });
+  };
+  makeAMove(moveProps);
+
+  if (checkingForMate({ ...moveProps, piecesData })) {
+    setIsMate(true);
+  }
 }
 
 export default Moves;

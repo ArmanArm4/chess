@@ -4,12 +4,11 @@ import knightPosibleMove from "./knightPosibleMove.js";
 import rookPosibleMove from "./rookPosibleMove.js";
 import bishopPosibleMove from "./bishopPosibleMove.js";
 import queenPosibleMove from "./queenPosibleMove.js";
-import piecesData from "../../context/piecesData";
 
-function allMoves(props) {
+function allMoves({ pieceColor, piecesData }) {
   let allMoves = [];
 
-  const attackingColor = props.pieceColor;
+  const attackingColor = pieceColor;
 
   const defendingKing = piecesData.filter((pieceData) => {
     return pieceData.type === "king" && pieceData.color !== attackingColor;
@@ -30,10 +29,13 @@ function allMoves(props) {
       initialY: PieceY,
       pieceColor: attackingColor,
       thePieceOnActiveSquare: attackingPiece,
+      piecesData,
     };
+
     switch (attackingPiece.type) {
       case "pawn":
         allMoves = allMoves.concat(pawnposibleMove(attPieceProps));
+
         break;
       case "bishop":
         allMoves = allMoves.concat(bishopPosibleMove(attPieceProps));
@@ -46,6 +48,7 @@ function allMoves(props) {
         break;
       case "queen":
         allMoves = allMoves.concat(queenPosibleMove(attPieceProps));
+
         break;
       case "rook":
         allMoves = allMoves.concat(rookPosibleMove(attPieceProps));

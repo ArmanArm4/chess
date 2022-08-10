@@ -1,6 +1,4 @@
-import piecesData from "../context/piecesData";
-
-function isoccupied(x, y) {
+function isoccupied(x, y, piecesData) {
   let checkThisSquare = `${x}${y}`;
   let Isoccupied = false;
 

@@ -1,13 +1,16 @@
 import isOccupied from "../isOccupied";
-function knightPosibleMove({ initialX, initialY, pieceColor }) {
+function knightPosibleMove({ initialX, initialY, pieceColor, piecesData }) {
   // knight posible moves
 
   let posibleMoves = [];
   const posibleMovesFunction = (x, y) => {
-    if (!isOccupied(x, y)) {
+    if (!isOccupied(x, y, piecesData)) {
       posibleMoves.push({ x: x, y: y, capturing: false });
     }
-    if (isOccupied(x, y) && isOccupied(x, y) !== pieceColor) {
+    if (
+      isOccupied(x, y, piecesData) &&
+      isOccupied(x, y, piecesData) !== pieceColor
+    ) {
       posibleMoves.push({ x: x, y: y, capturing: true });
     }
   };

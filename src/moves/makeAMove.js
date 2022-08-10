@@ -1,14 +1,10 @@
 function makeAMove({
   SquareId,
   thePieceOnActiveSquare,
-  thePieceOnSelectedSquare,
   posibleMoves,
   ChangeTurnColor,
   deleteThePiece,
-  pieceColor,
 }) {
-  // capturing a piece?
-
   //for pawn
   function promotionsquare(finalY) {
     if (thePieceOnActiveSquare.type !== "pawn") return;
@@ -16,10 +12,10 @@ function makeAMove({
       thePieceOnActiveSquare.type = "queen";
     }
   }
+  let finalX = Number(SquareId.toString().split("")[0]);
+  let finalY = Number(SquareId.toString().split("")[1]);
   // looping through posible moves
   posibleMoves.forEach((posibleXY) => {
-    let finalX = Number(SquareId.toString().split("")[0]);
-    let finalY = Number(SquareId.toString().split("")[1]);
     ///move without capturing
 
     if (

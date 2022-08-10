@@ -4,6 +4,7 @@ function pawnposibleMove({
   initialY,
   thePieceOnActiveSquare,
   pieceColor,
+  piecesData,
 }) {
   let posibleMoves = [];
 
@@ -23,22 +24,28 @@ function pawnposibleMove({
       oppColor = "white";
     }
 
-    if (!isOccupied(initialX, oneForward)) {
+    if (!isOccupied(initialX, oneForward, piecesData)) {
       posibleMoves.push({ x: initialX, y: oneForward, capturing: false });
     }
 
     if (
-      !isOccupied(initialX, oneForward) &&
-      !isOccupied(initialX, twoForward) &&
+      !isOccupied(initialX, oneForward, piecesData) &&
+      !isOccupied(initialX, twoForward, piecesData) &&
       !thePieceOnActiveSquare.moved
     ) {
       posibleMoves.push({ x: initialX, y: twoForward, capturing: false });
     }
-    if (isOccupied(oneRight, oneForward) && pieceColor !== oppColor) {
+    if (
+      isOccupied(oneRight, oneForward, piecesData) &&
+      pieceColor !== oppColor
+    ) {
       posibleMoves.push({ x: oneRight, y: oneForward, capturing: true });
     }
 
-    if (isOccupied(oneLeft, oneForward) && pieceColor !== oppColor) {
+    if (
+      isOccupied(oneLeft, oneForward, piecesData) &&
+      pieceColor !== oppColor
+    ) {
       posibleMoves.push({ x: oneLeft, y: oneForward, capturing: true });
     }
   }

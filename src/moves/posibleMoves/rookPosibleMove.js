@@ -1,18 +1,18 @@
 import isOccupied from "../isOccupied";
-function rookPosibleMove({ initialX, initialY, pieceColor }) {
+function rookPosibleMove({ initialX, initialY, pieceColor, piecesData }) {
   let posibleMoves = [];
 
   // rook posible moves
 
   //move to top
   for (let i = 1; i < 7; i++) {
-    if (!isOccupied(initialX, initialY + i)) {
+    if (!isOccupied(initialX, initialY + i, piecesData)) {
       posibleMoves.push({ x: initialX, y: initialY + i, capturing: false });
       continue;
     }
     if (
-      isOccupied(initialX, initialY + i) &&
-      isOccupied(initialX, initialY + i) !== pieceColor
+      isOccupied(initialX, initialY + i, piecesData) &&
+      isOccupied(initialX, initialY + i, piecesData) !== pieceColor
     ) {
       posibleMoves.push({ x: initialX, y: initialY + i, capturing: true });
       break;
@@ -21,13 +21,13 @@ function rookPosibleMove({ initialX, initialY, pieceColor }) {
   }
   //move to bottom
   for (let i = 1; i < 7; i++) {
-    if (!isOccupied(initialX, initialY - i)) {
+    if (!isOccupied(initialX, initialY - i, piecesData)) {
       posibleMoves.push({ x: initialX, y: initialY - i, capturing: false });
       continue;
     }
     if (
-      isOccupied(initialX, initialY - i) &&
-      isOccupied(initialX, initialY - i) !== pieceColor
+      isOccupied(initialX, initialY - i, piecesData) &&
+      isOccupied(initialX, initialY - i, piecesData) !== pieceColor
     ) {
       posibleMoves.push({ x: initialX, y: initialY - i, capturing: true });
       break;
@@ -36,13 +36,13 @@ function rookPosibleMove({ initialX, initialY, pieceColor }) {
   }
   //move to right
   for (let i = 1; i < 7; i++) {
-    if (!isOccupied(initialX + i, initialY)) {
+    if (!isOccupied(initialX + i, initialY, piecesData)) {
       posibleMoves.push({ x: initialX + i, y: initialY, capturing: false });
       continue;
     }
     if (
-      isOccupied(initialX + i, initialY) &&
-      isOccupied(initialX + i, initialY) !== pieceColor
+      isOccupied(initialX + i, initialY, piecesData) &&
+      isOccupied(initialX + i, initialY, piecesData) !== pieceColor
     ) {
       posibleMoves.push({ x: initialX + i, y: initialY, capturing: true });
       break;
@@ -51,13 +51,13 @@ function rookPosibleMove({ initialX, initialY, pieceColor }) {
   }
   //move to left
   for (let i = 1; i < 7; i++) {
-    if (!isOccupied(initialX - i, initialY)) {
+    if (!isOccupied(initialX - i, initialY, piecesData)) {
       posibleMoves.push({ x: initialX - i, y: initialY, capturing: false });
       continue;
     }
     if (
-      isOccupied(initialX - i, initialY) &&
-      isOccupied(initialX - i, initialY) !== pieceColor
+      isOccupied(initialX - i, initialY, piecesData) &&
+      isOccupied(initialX - i, initialY, piecesData) !== pieceColor
     ) {
       posibleMoves.push({ x: initialX - i, y: initialY, capturing: true });
       break;
