@@ -68,6 +68,7 @@ function Moves(
     posibleMoves,
     piecesData,
   });
+
   const moveProps = {
     SquareId,
     thePieceOnActiveSquare,
@@ -79,9 +80,9 @@ function Moves(
   };
   makeAMove(moveProps);
 
-  if (checkingForMate({ ...moveProps, piecesData })) {
-    setIsMate(true);
-  }
+  // if (checkingForMate({ ...moveProps, piecesData })) {
+  //   setIsMate(true);
+  // }
 }
 
 export default Moves;

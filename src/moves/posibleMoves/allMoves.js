@@ -17,7 +17,7 @@ function allMoves({ pieceColor, piecesData }) {
   const attackingPieces = piecesData.filter((pieceData) => {
     return !pieceData.eaten && pieceData.color === attackingColor;
   });
-
+  console.log(attackingPieces);
   //finding all posible moves by attacking pieces
 
   attackingPieces.forEach((attackingPiece) => {
@@ -42,6 +42,7 @@ function allMoves({ pieceColor, piecesData }) {
         break;
       case "king":
         allMoves = allMoves.concat(kingPosibleMove(attPieceProps));
+
         break;
       case "knight":
         allMoves = allMoves.concat(knightPosibleMove(attPieceProps));

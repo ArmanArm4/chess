@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Point from "./Point";
+
 import "../css/player.css";
 
-function Player() {
+function Player({ piecesData, color }) {
   return (
     <div className="player">
       <div className="playerInfo">
-        <div className="profile_image"></div>
+        <div className={`profile_image ${color}`}></div>
         <div className="nameAndPoints">
-          <p className="name">Poseidon</p>
-          <div className="points">
-            <p>-4</p>
-          </div>
+          <p className="name">
+            {color === "white" ? "Poseidon" : "Hephaestus"}
+          </p>
+          <Point color={color} piecesData={piecesData}></Point>
         </div>
       </div>
-      <p className="playerTime">12:11</p>
     </div>
   );
 }

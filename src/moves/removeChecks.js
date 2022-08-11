@@ -1,22 +1,25 @@
 import isCheck from "./isCheck";
 
 function removeChecks(props) {
-  const { thePieceOnActiveSquare, pieceColor, posibleMoves, piecesData } =
-    props;
+  const { thePieceOnActiveSquare, posibleMoves, piecesData } = props;
 
   let notValidMoves = [];
-  posibleMoves.forEach((posibleMove, id) => {
-    let clonedPiecesData = JSON.parse(JSON.stringify(piecesData));
+  let clonedPiecesData = JSON.parse(JSON.stringify(piecesData));
 
+  posibleMoves.forEach((posibleMove, id) => {
     let clonedActivePiece = clonedPiecesData.find(
       (Cdata) => Cdata.name === thePieceOnActiveSquare.name
     );
+    let oppPiece = clonedPiecesData.find(
+      (Cdata) => Cdata.pos === Number(`${posibleMove.x}${posibleMove.y}`)
+    );
+    let pieceColor = clonedActivePiece.color;
 
     clonedActivePiece.pos = Number(`${posibleMove.x}${posibleMove.y}`);
 
-    let notValidMove = isCheck({ piecesData: clonedPiecesData, pieceColor });
+    let isnotValidMove = isCheck({ piecesData: clonedPiecesData, pieceColor });
 
-    if (notValidMove) {
+    if (isnotValidMove) {
       notValidMoves.push(posibleMove);
     }
   });

@@ -32,8 +32,8 @@ nav a:hover {
 }
 @media only screen and (max-width: 1415px) {
   nav {
-    width: 400px;
-    max-width: 25%;
+    /* width: 400px;
+    max-width: 25%; */
   }
   .logo {
     margin-top: 32px;

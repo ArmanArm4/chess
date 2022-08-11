@@ -9,11 +9,13 @@ function isCheck({ piecesData, pieceColor }) {
   if (pieceColor === "black") {
     oppColor = "white";
   }
+  if (pieceColor === "white") {
+    oppColor = "black";
+  }
 
   const allMovesData = allMoves({ piecesData, pieceColor: oppColor });
-  //   console.log(allMovesData);
 
-  const Checks = allMovesData.filter(
+  let Checks = allMovesData.filter(
     (moves) => `${moves.x}${moves.y}` == attacingKing.pos
   );
 

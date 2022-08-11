@@ -39,20 +39,27 @@
   width: 52px;
   height: 52px;
 }
+.player .white {
+  background-image: url("../images/avatar2.png");
+}
 .player p {
   margin: 0;
   font-family: "Gideon Roman", cursive;
 }
 .player .points {
-  width: 24px;
+  width: min-content;
+  min-width: 24px;
   height: 24px;
+  padding-inline: 4px;
   background-color: #f5f8f3;
   color: #181818;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  margin-block: 4px;
 }
+
 @media only screen and (max-height: 731px) {
   .player {
     border-radius: 8px;
@@ -75,7 +82,7 @@
   }
 
   .player .points {
-    width: 22px;
+    min-width: 22px;
     height: 22px;
     margin-top: 4px;
     font-size: 15px;

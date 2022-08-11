@@ -6,6 +6,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_2",
@@ -14,6 +15,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_3",
@@ -22,6 +24,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_4",
@@ -30,6 +33,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_5",
@@ -38,6 +42,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_6",
@@ -46,6 +51,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_7",
@@ -54,6 +60,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_pawn_8",
@@ -62,6 +69,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 1,
   },
   {
     name: "white_bishop_1",
@@ -70,6 +78,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 3.25,
   },
   {
     name: "white_bishop_2",
@@ -78,6 +87,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 3.25,
   },
   {
     name: "white_knight_1",
@@ -86,6 +96,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 3,
   },
   {
     name: "white_knight_2",
@@ -94,6 +105,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 3,
   },
   {
     name: "white_rook_1",
@@ -102,6 +114,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 5,
   },
   {
     name: "white_rook_2",
@@ -110,6 +123,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 5,
   },
   {
     name: "white_king",
@@ -118,6 +132,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 0,
   },
   {
     name: "white_queen",
@@ -126,6 +141,7 @@ const piecesData = [
     eaten: false,
     color: "white",
     moved: false,
+    points: 9,
   },
   {
     name: "black_pawn_1",
@@ -134,6 +150,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_2",
@@ -142,6 +159,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_3",
@@ -150,6 +168,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_4",
@@ -158,6 +177,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_5",
@@ -166,6 +186,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_6",
@@ -174,6 +195,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_7",
@@ -182,6 +204,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_pawn_8",
@@ -190,6 +213,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 1,
   },
   {
     name: "black_bishop_1",
@@ -198,6 +222,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 3.25,
   },
   {
     name: "black_bishop_2",
@@ -206,6 +231,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 3.25,
   },
   {
     name: "black_knight_1",
@@ -214,6 +240,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 3,
   },
   {
     name: "black_knight_2",
@@ -222,6 +249,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 3,
   },
   {
     name: "black_rook_1",
@@ -230,6 +258,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 5,
   },
   {
     name: "black_rook_2",
@@ -238,6 +267,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 5,
   },
   {
     name: "black_king",
@@ -246,6 +276,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 0,
   },
   {
     name: "black_queen",
@@ -254,6 +285,7 @@ const piecesData = [
     eaten: false,
     color: "black",
     moved: false,
+    points: 9,
   },
 ];
 

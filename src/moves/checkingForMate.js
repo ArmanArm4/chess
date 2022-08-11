@@ -28,6 +28,7 @@ function checkingForMate(Mateprops) {
     };
 
     let posibleMoves = oppPiecesMoves(props);
+
     removeChecks({ ...props, posibleMoves });
     if (posibleMoves.length > 0) {
       isMate = false;

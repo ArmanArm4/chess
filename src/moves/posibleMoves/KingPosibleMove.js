@@ -1,11 +1,11 @@
 import isOccupied from "../isOccupied";
-function KingPosibleMove({
-  initialX,
-  initialY,
-  pieceColor,
-  thePieceOnSelectedSquare,
-  piecesData,
-}) {
+function KingPosibleMove({ initialX, initialY, pieceColor, piecesData }) {
+  let king = piecesData.filter(
+    (p) => p.type === "king" && pieceColor === p.color
+  )[0];
+
+  const kingIsMoved = king.moved;
+
   let posibleMoves = [];
 
   // king posible moves
@@ -84,6 +84,7 @@ function KingPosibleMove({
   if (!isOccupied(initialX, initialY - 1, piecesData)) {
     posibleMoves.push({ x: initialX, y: initialY - 1, capturing: false });
   }
+
   if (
     isOccupied(initialX, initialY - 1, piecesData) &&
     isOccupied(initialX, initialY - 1, piecesData) !== pieceColor
@@ -120,6 +121,63 @@ function KingPosibleMove({
       x: initialX - 1,
       y: initialY,
       capturing: true,
+    });
+  }
+
+  //Castling white
+  if (
+    !isOccupied(6, 1, piecesData) &&
+    !isOccupied(7, 1, piecesData) &&
+    pieceColor == "white" &&
+    !kingIsMoved
+  ) {
+    console.log(isOccupied(6, 1, piecesData));
+    posibleMoves.push({
+      x: 7,
+      y: 1,
+      capturing: false,
+    });
+  }
+  if (
+    !isOccupied(2, 1, piecesData) &&
+    !isOccupied(3, 1, piecesData) &&
+    !isOccupied(4, 1, piecesData) &&
+    pieceColor == "white" &&
+    !kingIsMoved
+  ) {
+    console.log(isOccupied(6, 1, piecesData));
+    posibleMoves.push({
+      x: 3,
+      y: 1,
+      capturing: false,
+    });
+  }
+  //Castling white
+  if (
+    !isOccupied(6, 8, piecesData) &&
+    !isOccupied(7, 8, piecesData) &&
+    pieceColor == "black" &&
+    !kingIsMoved
+  ) {
+    console.log(isOccupied(6, 1, piecesData));
+    posibleMoves.push({
+      x: 7,
+      y: 8,
+      capturing: false,
+    });
+  }
+  if (
+    !isOccupied(2, 8, piecesData) &&
+    !isOccupied(3, 8, piecesData) &&
+    !isOccupied(4, 8, piecesData) &&
+    pieceColor == "black" &&
+    !kingIsMoved
+  ) {
+    console.log(isOccupied(6, 1, piecesData));
+    posibleMoves.push({
+      x: 3,
+      y: 8,
+      capturing: false,
     });
   }
   posibleMoves = posibleMoves.filter((obj) => {

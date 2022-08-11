@@ -9,7 +9,7 @@ import { useContext } from "react";
 import ChessContext from "./context/chessContext";
 
 function App() {
-  const { isMate, turnColor } = useContext(ChessContext);
+  const { isMate, turnColor, piecesData } = useContext(ChessContext);
   let color = "white";
   if (turnColor === "white") {
     color = "black";
@@ -20,11 +20,11 @@ function App() {
       <MobileNav></MobileNav>
       <main>
         <div className="game">
-          <Player></Player>
+          <Player piecesData={piecesData} color={"black"}></Player>
           <Board></Board>
-          <Player></Player>
+          <Player piecesData={piecesData} color={"white"}></Player>
         </div>
-        <Notations></Notations>
+        {/* <Notations></Notations> */}
       </main>
       {isMate && <PlayAgain color={color}></PlayAgain>}
     </div>
