@@ -78,11 +78,12 @@ function Moves(
     pieceColor: thePieceOnActiveSquare.color,
     thePieceOnSelectedSquare,
   };
+
   makeAMove(moveProps);
 
-  // if (checkingForMate({ ...moveProps, piecesData })) {
-  //   setIsMate(true);
-  // }
+  if (checkingForMate({ ...moveProps, piecesData })) {
+    setIsMate(true);
+  }
 }
 
 export default Moves;

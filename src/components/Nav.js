@@ -7,13 +7,15 @@ function Nav() {
       <div className="logo"></div>
       <ul>
         <li>
-          <a>GitHub</a>
+          <a href="https://github.com/ArmanArm4/chess" target="_blank">
+            GitHub
+          </a>
         </li>
+
         <li>
-          <a>Online</a>
-        </li>
-        <li>
-          <a>armanportfolio.com</a>
+          <a href="https://armmat.dev/" target="_blank">
+            armmat.com
+          </a>
         </li>
       </ul>
     </nav>

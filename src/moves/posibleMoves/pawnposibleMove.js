@@ -54,9 +54,9 @@ function pawnposibleMove({
   posibleMoves = posibleMoves.filter((obj) => {
     return obj.y >= 1 && obj.y <= 8 && obj.x >= 1 && obj.x <= 8;
   });
-  posibleMoves = posibleMoves.filter((obj) => {
-    return obj.y !== 2 && obj.y !== 7 && obj.moved !== true;
-  });
+  // posibleMoves = posibleMoves.filter((obj) => {
+  //   return obj.y !== 2 && obj.y !== 7 && obj.moved !== true;
+  // });
 
   return posibleMoves;
 }

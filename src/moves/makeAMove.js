@@ -7,7 +7,7 @@ function makeAMove({
   ChangeTurnColor,
   deleteThePiece,
 }) {
-  console.log(posibleMoves);
+  // console.log(posibleMoves);
   //for pawn
   function promotionsquare(finalY) {
     if (thePieceOnActiveSquare.type !== "pawn") return;

@@ -10,13 +10,25 @@ function removeChecks(props) {
     let clonedActivePiece = clonedPiecesData.find(
       (Cdata) => Cdata.name === thePieceOnActiveSquare.name
     );
-    let oppPiece = clonedPiecesData.find(
-      (Cdata) => Cdata.pos === Number(`${posibleMove.x}${posibleMove.y}`)
-    );
+
     let pieceColor = clonedActivePiece.color;
+
+    let oppPiece = clonedPiecesData.find(
+      (Cdata) =>
+        pieceColor != Cdata.color &&
+        Cdata.pos === Number(`${posibleMove.x}${posibleMove.y}`)
+    );
+
+    if (oppPiece) {
+      oppPiece.eaten = true;
+      oppPiece.pos = "dead";
+    }
 
     clonedActivePiece.pos = Number(`${posibleMove.x}${posibleMove.y}`);
 
+    if (oppPiece && pieceColor !== oppPiece.color) {
+      // oppPiece.capturing = true
+    }
     let isnotValidMove = isCheck({ piecesData: clonedPiecesData, pieceColor });
 
     if (isnotValidMove) {
@@ -25,9 +37,14 @@ function removeChecks(props) {
   });
 
   notValidMoves.forEach((NV) => {
-    let index = posibleMoves.indexOf(NV);
-    posibleMoves.splice(index, 1);
+    if (posibleMoves.length !== notValidMoves) {
+      let index = posibleMoves.indexOf(NV);
+      posibleMoves.splice(index, 1);
+    } else {
+      posibleMoves = [];
+    }
   });
+  // posibleMoves.filter(PM => PM !== NV)
 }
 
 export default removeChecks;
